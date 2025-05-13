@@ -7,8 +7,10 @@ import share from '../../assets/share.png'
 import save from '../../assets/save.png'
 import jack from '../../assets/jack.png'
 import user_profile from '../../assets/user_profile.jpg'
+
 import { API_KEY } from '../../data'
 import {value_converter} from '../../data'
+
 import moment from 'moment';
 import { useParams } from 'react-router-dom'
 
@@ -47,10 +49,8 @@ const PlayVideo = () => {
       {/* <video src={video1} controls autoPlay muted></video> */}
       <iframe src={`https://www.youtube.com/embed/${videoId}?autoplay=1`} frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
       <h3>{apiData?apiData.snippet.title:"title"}</h3>
-      <div className="play-video-info">
-      
+      <div className="play-video-info">      
         <p>{apiData?value_converter(apiData.statistics.viewCount):"views"} Views &bull; {apiData ? moment(apiData.snippet.publishedAt).fromNow() : "ago11"}</p>
-
         <div>
           <span><img src={like} alt="" />{apiData?value_converter(apiData.statistics.likeCount):"likeCount"} </span>
           <span><img src={dislike} alt="" /></span>
@@ -68,6 +68,7 @@ const PlayVideo = () => {
         <button>Subscribed</button>
       </div>
       <div className="vid-description">
+        {/* <p>..</p> */}
         <p>{apiData?apiData.snippet.description.slice(0,250):"description"}</p>
         <hr />
         <h4>{apiData?value_converter(apiData.statistics.commentCount):"commentCount"} Comments</h4>
@@ -78,7 +79,9 @@ const PlayVideo = () => {
           <div key={index} className="comment">
             <img src={item.snippet.topLevelComment.snippet.authorProfileImageUrl} alt=""/>
             <div>
-              <h3>{item.snippet.topLevelComment.snippet.authorDisplayName} <span>{moment(item.snippet.topLevelComment.snippet.publishedAt).fromNow()}</span> </h3>
+              <h3>{item.snippet.topLevelComment.snippet.authorDisplayName} 
+                <span>{moment(item.snippet.topLevelComment.snippet.publishedAt).fromNow()}</span> 
+              </h3>
               <p>{item.snippet.topLevelComment.snippet.textDisplay}</p>
               <div className="comment-action">
                 <img src={like} alt=""/><span>{value_converter(item.snippet.topLevelComment.snippet.likeCount)}</span>
