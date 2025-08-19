@@ -8,6 +8,9 @@ import Video from './pages/Video/Video';
 import SearchTerm from './Components/Search/SearchFeed';
 import PlayVideo from './Components/PlayVideo/PlayVideo';
 import VideoDetail from './Components/PlayVideo/VideoDetail';
+// import Practice from './Practice';
+import Prac from './Prac'
+
 
 function App() {
   const[sidebar,setSidebar]=useState(true);
@@ -21,7 +24,10 @@ function App() {
         <Route path='search/:searchTerm' element={<SearchTerm/> }/>
         <Route path='/search/:searchTerm/video/:videoId' element={<PlayVideo />}/>
         <Route path='video/:id' element={<VideoDetail/>}/>
+        {/* <Route path='/feed/subscriptions'>element={Subscription} </Route> */}
       </Routes>
+      {/* <Practice/> */}
+       {/* <Prac/> */}
     </div>
   )
 }

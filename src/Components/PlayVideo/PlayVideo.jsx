@@ -8,6 +8,8 @@ import save from '../../assets/save.png'
 import jack from '../../assets/jack.png'
 import user_profile from '../../assets/user_profile.jpg'
 
+
+
 import { API_KEY } from '../../data'
 import {value_converter} from '../../data'
 
@@ -60,13 +62,19 @@ const PlayVideo = () => {
       </div>
       <hr />
       <div className="publisher">
+        {/* <a href={`https://www.youtube.com/channel/${channelData?.id?.channelId}`}> */}
         <img src={channelData?channelData.snippet.thumbnails.default.url:""} alt="" />
+        {/* </a> */}
+
+         
+
         <div>
           <p>{apiData?apiData.snippet.channelTitle:""}</p>
           <span>{channelData?value_converter(channelData.statistics.subscriberCount):"1M"} Subscribers</span>
         </div>
         <button>Subscribed</button>
       </div>
+
       <div className="vid-description">
         {/* <p>..</p> */}
         <p>{apiData?apiData.snippet.description.slice(0,250):"description"}</p>

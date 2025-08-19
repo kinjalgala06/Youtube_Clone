@@ -33,7 +33,7 @@ const Navbar = ({setSidebar}) => {
             <img src={upload_icon} alt="" />
             <img src={more_icon} alt="" />
             <img src={notification_icon} alt="" />
-            <img src={profile_icon} className='user-icon' alt="" />
+            <Link to='/feed/subscriptions'><img src={profile_icon} className='user-icon' alt="subs" /></Link> 
         </div>
     </nav>
   )

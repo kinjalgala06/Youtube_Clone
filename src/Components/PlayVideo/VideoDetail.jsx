@@ -1,5 +1,5 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import ReactPlayer from 'react-player';
 
 function PlayVideo() {
@@ -8,6 +8,7 @@ function PlayVideo() {
   return (
     <div style={{ padding: '20px' }}>
       <h2>Now Playing</h2>
+      
       <ReactPlayer 
         url={`https://www.youtube.com/watch?v=${videoId}`} 
         controls 
@@ -15,6 +16,7 @@ function PlayVideo() {
         width="100%" 
         height="500px" 
       />
+      
     </div>
   );
 }
